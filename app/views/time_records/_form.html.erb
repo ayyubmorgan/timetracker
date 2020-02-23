@@ -1,0 +1,36 @@
+<%= form_for(time_record, html: { class: "ui form" }) do |f| %>
+  <% if time_record.errors.any? %>
+    <div class="ui error message">
+      <div class="header">
+        There were some errors with your submission
+      </div>
+      <ul class="list">
+      <% time_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="two fields">
+    <div class="field">
+      <%= f.label :name, 'Name' %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :clock, 'In/Out' %>
+      <%= f.select :clock, [['In', 'in'],['Out', 'out']], { :prompt => '--' }, { class: "ui fluid dropdown" } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :remarks, 'Remarks' %>
+    <%= f.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', class: "ui primary button" %>
+    <%= link_to 'Back', time_records_path, class: "ui button" %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<% if notice %>
+  <div class="ui success message">
+    <div class="header"><%= notice %></div>
+  </div>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @time_record.name %>
+</p>
+
+<p>
+  <strong>In/Out:</strong>
+  <%= @time_record.clock %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @time_record.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_time_record_path(@time_record), class: "ui primary button" %> |
+<%= link_to 'Back', time_records_path, class: "ui button" %>

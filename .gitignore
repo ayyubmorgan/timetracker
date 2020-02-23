@@ -1,1 +1,4 @@
-log/development.log
+log/*.log
+tmp/cache/*
+tmp/pids/*
+tmp/sockets/*

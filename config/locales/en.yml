@@ -21,3 +21,16 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    attributes:
+      time_record:
+        clock: "In/Out"
+    errors:
+      models:
+        time_record:
+          attributes:
+            name:
+              blank: "is required"
+            clock:
+              blank: "is required"

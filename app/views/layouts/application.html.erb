@@ -3,12 +3,18 @@
   <head>
     <title>Time Tracker</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header id="app-header">
+      <%= link_to '/' do %>
+        <%= semantic_icon('window maximize outline') %>The Company
+      <% end %>
+    </header>
+    <main id="app-content">
+      <%= yield %>
+    </main>
   </body>
 </html>

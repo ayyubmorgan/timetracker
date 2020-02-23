@@ -1,0 +1,13 @@
+.time-records-table {
+  td, th {
+    width: 15%;
+
+    &.actions-col {
+      width: 24%;
+    }
+
+    .date-value {
+      white-space: nowrap;
+    }
+  }
+}

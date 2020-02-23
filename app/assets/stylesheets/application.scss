@@ -1,0 +1,50 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+$page-background-color: #EFEFEF;
+
+@import "semantic-ui";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $page-background-color;
+  margin: 0;
+}
+
+#app-header {
+  font-size: 3em;
+  line-height: 3em;
+  font-weight: 600;
+  text-align: center;
+}
+
+#app-content {
+  width: 95%;
+  max-width: 70em;
+  margin: 0 auto 20em;
+
+  h1 {
+    text-align: center;
+  }
+
+  .ui.form .error.message,
+  .ui.form .success.message,
+  .ui.form .info.message {
+    display: block;
+  }
+}

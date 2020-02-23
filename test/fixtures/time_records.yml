@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  clock: in
+  remarks: MyText
+
+two:
+  name: MyString
+  clock: out
+  remarks: MyText

@@ -1,0 +1,47 @@
+<% if notice %>
+  <div class="ui success message">
+    <div class="header"><%= notice %></div>
+  </div>
+<% end %>
+
+<h1 class="ui header">Time Records</h1>
+
+<%= link_to 'New Time Record', new_time_record_path, class: "ui primary button" %>
+
+<br>
+
+<table class="ui celled padded table time-records-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>In/Out</th>
+      <th>Date & Time</th>
+      <th>Remarks</th>
+      <th class="actions-col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @time_records.each do |time_record| %>
+      <tr>
+        <td><%= time_record.name %></td>
+        <td><%= time_record.clocked_in? ? 'In' : 'Out' %></td>
+        <td>
+          <span class="date-value">
+            <%= time_record.created_at.strftime("%b %d, %Y %I:%M %P") %>
+          </span>
+        </td>
+        <td><%= time_record.remarks %></td>
+        <td class="actions-col">
+          <%= link_to edit_time_record_path(time_record), class: "ui tiny compact basic primary button" do %>
+            <%= semantic_icon('edit outline') %> Edit
+          <% end %>
+
+          <%= link_to time_record, class: "ui tiny compact basic red button", method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= semantic_icon('trash alternate outline') %> Delete
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
